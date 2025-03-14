@@ -699,21 +699,6 @@ function EspInterface.Unload()
 end
 
 -- game specific functions
-function EspInterface.getWeapon(player)
-	local character = player and EspInterface.getCharacter(player);
-	for _, child in ipairs(character:GetChildren()) do
-        if child:IsA("Tool") then
-            return tostring(child.Name)
-        end
-    end
-	character.ChildAdded:Connect(function(child)
-		if child:IsA("Tool") then
-			return tostring(child.Name)
-		end
-	end)	
-	return "Unarmed"
-end
-
 function EspInterface.isFriendly(player)
 	return player.Team and player.Team == localPlayer.Team;
 end
@@ -734,5 +719,20 @@ function EspInterface.getHealth(player)
 	end
 	return 100, 100;
 end
+function EspInterface.getWeapon(player)
+	local character = player and EspInterface.getCharacter(player);
+	for _, child in ipairs(character:GetChildren()) do
+        if child:IsA("Tool") then
+            return tostring(child.Name)
+        end
+    end
+	character.ChildAdded:Connect(function(child)
+		if child:IsA("Tool") then
+			return tostring(child.Name)
+		end
+	end)	
+	return "Unarmed"
+end
+
 
 return EspInterface;
