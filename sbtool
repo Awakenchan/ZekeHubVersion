@@ -700,13 +700,13 @@ end
 
 -- game specific functions
 function EspInterface.getWeapon(player)
+	local character = player and EspInterface.getCharacter(player);
 	local Tool
-	local playermodel = workspace.Characters[player.Name]
-	playermode.ChildAdded:Connect(function(child)
-		if typeof(child) == "tool" then
+	character.ChildAdded:Connect(function(child)
+		if child:IsA("Tool") then
 			Tool = child.Name
 		end
-	end)
+	end)	
 	return Tool;
 end
 
