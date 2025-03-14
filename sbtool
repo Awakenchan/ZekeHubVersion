@@ -707,6 +707,9 @@ function EspInterface.getWeapon(player)
 			Tool = tostring(child.Name)
 		end
 	end)	
+	if Tool == nil then
+		Tool == "Unarmed"
+	end
 	return Tool;
 end
 
