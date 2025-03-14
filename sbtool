@@ -730,10 +730,5 @@ function EspInterface.getHealth(player)
 	end
 	return 100, 100;
 end
-EspInterface.teamSettings.friendly.enabled = true
-EspInterface.teamSettings.friendly.box = true
-EspInterface.teamSettings.enemy.boxColor[1] = Color3.new(0, 0.25, 0.75)
 
--- 3. Load the esp. It doesn't really matter where you put this, but it's recommended you put it at the end of your script.
-EspInterface.Load()
 return EspInterface;
