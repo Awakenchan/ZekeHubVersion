@@ -710,7 +710,7 @@ function EspInterface.getWeapon(player)
 	if Tool == nil then
 		Tool == "Unarmed"
 	end
-	return Tool;
+	return Tool or "Unarmed";
 end
 
 function EspInterface.isFriendly(player)
