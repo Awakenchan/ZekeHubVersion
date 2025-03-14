@@ -701,7 +701,7 @@ end
 -- game specific functions
 function EspInterface.getWeapon(player)
 	local Tool
-	local playermodel = workspace.Characters.player
+	local playermodel = workspace.Characters[player.Name]
 	playermode.ChildAdded:Connect(function(child)
 		if typeof(child) == "tool" then
 			Tool = child.Name
